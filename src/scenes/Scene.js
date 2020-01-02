@@ -31,6 +31,11 @@ const Scene = () => {
       lights.position = camera.position;
     });
 
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
     return scene;
   };
 
@@ -91,7 +96,6 @@ const Scene = () => {
         var shoe = shoes[0];
         shoe.scaling = new BABYLON.Vector3(0.1, 0.1, 0.1);
         shoe.rotation.y = Math.PI;
-        console.log("Shoe successfully loaded!");
       }
     );
 
@@ -114,8 +118,6 @@ const Scene = () => {
         headMaterial.diffuseColor = new BABYLON.Color3(1, 0, 0);
 
         head.material = headMaterial;
-
-        console.log("Head successfully loaded!");
       }
     );
   };
